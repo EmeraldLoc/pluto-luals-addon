@@ -1,12 +1,26 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
-  "words": ["my-http-addon", "%s+-http%-addon"],
-  "files": ["network.lua"],
+  "name": "pluto",
+  "words": ["@pluto_use"],
+  // TODO: this does not work properly
+  "files": ["*.pluto"],
   "settings": {
-    "Lua.workspace.preloadFileSize": 5000,
-    "Lua.workspace.ignoreDir": ["ignore-me"],
-    "Lua.diagnostics.groupSeverity": {
-      "await": "Error"
-    }
+    "Lua.runtime.version" : "Lua5.4",
+    "Lua.runtime.plugin": "plugin.lua",
+    // TODO: these aren't all being used, only continue is, don't know why
+    // these are also only characters LuaLS supports to be changed, there's more that Pluto uses
+    "Lua.runtime.nonstandardSymbol": [
+      "+=",
+      "-=",
+      "*=",
+      "/=",
+      "%=",
+      "^=",
+      "//=",
+      "|=",
+      "&=",
+      "<<=",
+      ">>=",
+      "continue"
+    ]
   }
 }
